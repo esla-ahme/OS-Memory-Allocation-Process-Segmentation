@@ -10,10 +10,7 @@ Item {
     property int holesNum: 0
     property var listOfholes : []
     property var holes: ({type: 'None',id: 'None',processName: 'None',base: 0,size: 0})
-    signal start()
-    onStart: {
-        console.log('All is done !')
-    }
+    signal holesConfigrationFinished()
     function isInt(n){
         return Number(n) === n && n % 1 === 0 && Number(n) !== 0;
     }
@@ -48,7 +45,7 @@ Item {
         }
         Text {
             id: wrongmemsize
-            text: "Please enter an +ve integer memory size !"
+            text: "Please enter a +ve integer memory size !"
             font.bold: true
             font.family: "Comic Sans MS"
             Layout.row: 0
@@ -78,6 +75,7 @@ Item {
                 {
                     wrongmemsize.visible = false
                     holeslist.clear()
+                    holesdata.clear()
                     memSize = Number(memorysize.text)
                     holesNum = holesnumber.value
                     for(var i = 0 ; i < holesNum ; i++)
@@ -142,7 +140,7 @@ Item {
         }
         Text {
             id: wrongholebase
-            text: "Please enter an +ve integer hole base !"
+            text: "Please enter a +ve integer hole base !"
             font.bold: true
             font.family: "Comic Sans MS"
             Layout.row: 1
@@ -152,7 +150,7 @@ Item {
         }
         Text {
             id: wrongholesize
-            text: "Please enter an +ve integer hole size !"
+            text: "Please enter a +ve integer hole size !"
             font.bold: true
             font.family: "Comic Sans MS"
             Layout.row: 2
@@ -350,7 +348,7 @@ Item {
                 }
                 if(i === holesdata.count - 1)
                 {
-                    start()
+                    holesConfigrationFinished()
                 }
             }
         }

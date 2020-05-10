@@ -7,5 +7,6 @@
         <file>CustomizingComboBox.qml</file>
         <file>CustomizingButton.qml</file>
         <file>HolesConfigration.qml</file>
+        <file>ProcessConfigration.qml</file>
     </qresource>
 </RCC>
