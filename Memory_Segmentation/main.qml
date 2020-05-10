@@ -5,5 +5,11 @@ Window {
     visible: true
     width: 640
     height: 480
-    title: qsTr("Hello World")
+    color: "black"
+    minimumHeight: 600
+    minimumWidth: 800
+    title: qsTr("Memory Segmentation")
+    HolesConfigration {
+        anchors.fill: parent
+    }
 }
